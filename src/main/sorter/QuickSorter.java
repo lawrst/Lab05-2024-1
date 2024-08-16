@@ -7,7 +7,26 @@ public class QuickSorter implements Sorter {
     }
 
     public int partition(int[] values, int low, int high) {
-        return 0;
+        int pivo = values[low];
+        int left = low + 1;
+        int right = high;
+
+        while (left <= right){
+            while (left <= right && values[left] <= pivo){
+                left++;
+            }
+            while (left <= right && values[right] > pivo){
+                right--;
+            }
+            if (left < right){
+                int temp = values[left];
+                values[left] = values[right];
+                values[right] = temp;
+            }
+        }
+        values[low] = values[right];
+        values[right] = pivo;
+
+        return right;
     }
-    
 }
