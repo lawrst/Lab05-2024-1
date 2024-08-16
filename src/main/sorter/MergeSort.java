@@ -1,4 +1,4 @@
-package main.sorter;
+package sorter;
 
 public class MergeSort implements Sorter {
 

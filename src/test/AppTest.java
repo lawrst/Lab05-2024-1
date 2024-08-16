@@ -3,22 +3,11 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Before;
 import org.junit.Test;
 
-import list.EstruturaElementar;
-import list.Sorter;
-import main.sorter.MergeSort;
-import main.sorter.QuickSorter;
+import sorter.*;
 
 public class AppTest {
-
-    private EstruturaElementar e;
-
-    @Before
-    public void setUp() throws Exception {
-        e = null;
-    }
 
     @Test
     public void testMerge() {
@@ -43,8 +32,8 @@ public class AppTest {
     @Test
     public void testMergeOp() {
         MergeSort m = new MergeSort();
-        int[] values1 = { 3, 5, 1 };
-        int[] values2 = { 4, 2, 6 };
+        int[] values1 = { 1, 3, 5 };
+        int[] values2 = { 2, 4, 6 };
         int[] sorted = m.merge(values1, values2);
         assertEquals(1, sorted[0]);
         assertEquals(2, sorted[1]);

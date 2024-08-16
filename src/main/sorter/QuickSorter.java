@@ -1,4 +1,4 @@
-package main.sorter;
+package sorter;
 
 public class QuickSorter implements Sorter {
     public int[] sort(int[] values) {
