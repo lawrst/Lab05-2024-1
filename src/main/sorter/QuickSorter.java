@@ -3,7 +3,16 @@ package sorter;
 public class QuickSorter implements Sorter {
     public int[] sort(int[] values) {
         // quicksort implementation
+        quickSort(values, 0, values.length -1);
         return values;
+    }
+    private void quickSort(int[] values, int low, int high){
+        if(low < high){
+            int pivot = partition(values, low, high);
+
+            quickSort(values, low, pivot - 1);
+            quickSort(values, pivot + 1, high);
+        }
     }
 
     public int partition(int[] values, int low, int high) {
